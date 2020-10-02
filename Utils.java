@@ -71,7 +71,7 @@ public class Utils {
 
     }
 
-    public static int calculateMaxCount(Map<String, Integer> list){
+    public static int calculateMaxCount(Map<String, Integer> list) {
         return list.entrySet().stream().max(Comparator.comparingInt(Map.Entry::getValue)).get().getValue();
     }
 

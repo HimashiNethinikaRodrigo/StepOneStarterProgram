@@ -1,12 +1,12 @@
 package model;
 /**
  * Write a description of class model.Rater here.
- * 
+ *
  * @author Himashi Rodrigo
- * @version 
+ * @version
  */
 
-import java.util.*;
+import java.util.ArrayList;
 
 public class Rater {
     private String myID;
@@ -18,7 +18,7 @@ public class Rater {
     }
 
     public void addRating(String item, double rating) {
-        myRatings.add(new Rating(item,rating));
+        myRatings.add(new Rating(item, rating));
     }
 
     public boolean hasRating(String item) {
@@ -27,7 +27,7 @@ public class Rater {
                 return true;
             }
         }
-        
+
         return false;
     }
 
@@ -41,7 +41,7 @@ public class Rater {
                 return myRating.getValue();
             }
         }
-        
+
         return -1;
     }
 
@@ -54,11 +54,11 @@ public class Rater {
         for (Rating myRating : myRatings) {
             list.add(myRating.getItem());
         }
-        
+
         return list;
     }
 
-    public ArrayList<Rating> getRatings(){
+    public ArrayList<Rating> getRatings() {
         return this.myRatings;
     }
 }

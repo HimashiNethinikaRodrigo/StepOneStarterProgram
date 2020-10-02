@@ -1,6 +1,8 @@
 import model.Rater;
 
-import java.util.*;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 
 public class FirstRatings {
 
@@ -22,17 +24,17 @@ public class FirstRatings {
                 System.out.println("values movie rating -------- :" + key + " :  " + value);
         });
 
-        System.out.println(raterType+ " rating count of specific rater (193): "+ raters.get("193"));
-        System.out.println(raterType+ " rating count of specific movie have (1798709): "+ movieRatings.get("1798709"));
-        System.out.println(raterType+ " max rating count: "+ ratingCount);
-        System.out.println(raterType+ " max movie rating count: "+ movieRatingCount);
-        System.out.println(raterType+ " different movie count: "+ (long) movieRatings.entrySet().size());
+        System.out.println(raterType + " rating count of specific rater (193): " + raters.get("193"));
+        System.out.println(raterType + " rating count of specific movie have (1798709): " + movieRatings.get("1798709"));
+        System.out.println(raterType + " max rating count: " + ratingCount);
+        System.out.println(raterType + " max movie rating count: " + movieRatingCount);
+        System.out.println(raterType + " different movie count: " + (long) movieRatings.entrySet().size());
     }
 
     private static void createMovieRatingMap(List<Rater> raterList, Map<String, Integer> movieRatings) {
         for (Rater rater : raterList) {
             rater.getItemsRated().forEach(myMovie -> {
-                if (movieRatings.containsKey(myMovie)){
+                if (movieRatings.containsKey(myMovie)) {
                     Integer count = movieRatings.get(myMovie);
                     movieRatings.put(myMovie, ++count);
                 } else {
